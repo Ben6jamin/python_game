@@ -1,19 +1,55 @@
+# Import necessary modules
 import tkinter as tk
+from tkinter import ttk
 
-# Create the main window
+# Create a window
 root = tk.Tk()
+root.geometry("400x300")
+root.title("Welcome to My Application")
 
-# Set the window size and position
-root.geometry("500x500+100+100")
+# Create a label for the title
+title_label = ttk.Label(root, text="Welcome to My Application!", font=("Helvetica", 18))
+title_label.pack(pady=20)
 
-# Load the image file
-image = tk.PhotoImage(file="desktop/python game/python_game/page1/Ben.jpg")
+# Create a label for the description
+description_label = ttk.Label(root, text="This is a simple Python application created to showcase a welcoming page.", font=("Helvetica", 12))
+description_label.pack(pady=10)
 
-# Create a label with the image as the background
-background_label = tk.Label(root, image=image)
-background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-# Add other widgets to the window as needed
 
-# Start the main event loop
+def login():
+    username = username_entry.get()
+    password = password_entry.get()
+    # Add code to check if username and password are correct
+    # If correct, proceed to main program
+    # If incorrect, display error message
+
+
+
+# Create labels and entry widgets
+username_label = tk.Label(root, text="Username:")
+username_entry = tk.Entry(root)
+password_label = tk.Label(root, text="Password:")
+password_entry = tk.Entry(root, show="*")
+login_button = tk.Button(root, text="Login", command=login)
+
+# Add labels and entry widgets to window
+username_label.pack()
+username_entry.pack()
+
+
+password_label.pack()
+password_entry.pack()
+login_button.pack()
+
+
+
+# Create a button to close the window
+close_button = ttk.Button(root, text="Close", command=root.destroy)
+close_button.pack(pady=200)
+
+# set the background color
+root.configure(background='blue')
+
+# Run the window
 root.mainloop()
